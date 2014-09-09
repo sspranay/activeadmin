@@ -1,0 +1,67 @@
+<h1>Listing contracts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account</th>
+      <th>Customer</th>
+      <th>Title</th>
+      <th>Contract no</th>
+      <th>Status</th>
+      <th>Start date</th>
+      <th>Current end date</th>
+      <th>End date w options</th>
+      <th>Revenue to date</th>
+      <th>Funded amount</th>
+      <th>Company</th>
+      <th>Div pool</th>
+      <th>Operating div</th>
+      <th>Basis</th>
+      <th>Vehicle</th>
+      <th>Contract type</th>
+      <th>Ecs role</th>
+      <th>Signed contract amount</th>
+      <th>Account ex</th>
+      <th>Director</th>
+      <th>Project manager</th>
+      <th>Cont admin</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contracts.each do |contract| %>
+      <tr>
+        <td><%= contract.account %></td>
+        <td><%= contract.customer %></td>
+        <td><%= contract.title %></td>
+        <td><%= contract.contract_no %></td>
+        <td><%= contract.status %></td>
+        <td><%= contract.start_date %></td>
+        <td><%= contract.current_end_date %></td>
+        <td><%= contract.end_date_w_options %></td>
+        <td><%= contract.revenue_to_date %></td>
+        <td><%= contract.funded_amount %></td>
+        <td><%= contract.company %></td>
+        <td><%= contract.div_pool %></td>
+        <td><%= contract.operating_div %></td>
+        <td><%= contract.basis %></td>
+        <td><%= contract.vehicle %></td>
+        <td><%= contract.contract_type %></td>
+        <td><%= contract.ecs_role %></td>
+        <td><%= contract.signed_contract_amount %></td>
+        <td><%= contract.account_ex %></td>
+        <td><%= contract.director %></td>
+        <td><%= contract.project_manager %></td>
+        <td><%= contract.cont_admin %></td>
+        <td><%= link_to 'Show', contract %></td>
+        <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
+        <td><%= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contract', new_contract_path %>

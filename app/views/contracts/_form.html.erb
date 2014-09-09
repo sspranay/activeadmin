@@ -1,0 +1,105 @@
+<%= form_for(@contract) do |f| %>
+  <% if @contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+      <ul>
+      <% @contract.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :account %><br>
+    <%= f.text_field :account %>
+  </div>
+  <div class="field">
+    <%= f.label :customer %><br>
+    <%= f.text_field :customer %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_no %><br>
+    <%= f.text_field :contract_no %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :current_end_date %><br>
+    <%= f.date_select :current_end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date_w_options %><br>
+    <%= f.date_select :end_date_w_options %>
+  </div>
+  <div class="field">
+    <%= f.label :revenue_to_date %><br>
+    <%= f.text_field :revenue_to_date %>
+  </div>
+  <div class="field">
+    <%= f.label :funded_amount %><br>
+    <%= f.text_field :funded_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br>
+    <%= f.text_field :company %>
+  </div>
+  <div class="field">
+    <%= f.label :div_pool %><br>
+    <%= f.number_field :div_pool %>
+  </div>
+  <div class="field">
+    <%= f.label :operating_div %><br>
+    <%= f.text_field :operating_div %>
+  </div>
+  <div class="field">
+    <%= f.label :basis %><br>
+    <%= f.text_field :basis %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle %><br>
+    <%= f.text_field :vehicle %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_type %><br>
+    <%= f.text_field :contract_type %>
+  </div>
+  <div class="field">
+    <%= f.label :ecs_role %><br>
+    <%= f.text_field :ecs_role %>
+  </div>
+  <div class="field">
+    <%= f.label :signed_contract_amount %><br>
+    <%= f.text_field :signed_contract_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :account_ex %><br>
+    <%= f.text_field :account_ex %>
+  </div>
+  <div class="field">
+    <%= f.label :director %><br>
+    <%= f.text_field :director %>
+  </div>
+  <div class="field">
+    <%= f.label :project_manager %><br>
+    <%= f.text_field :project_manager %>
+  </div>
+  <div class="field">
+    <%= f.label :cont_admin %><br>
+    <%= f.text_field :cont_admin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

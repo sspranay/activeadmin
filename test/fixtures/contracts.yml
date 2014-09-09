@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account: MyString
+  customer: MyString
+  title: MyString
+  contract_no: MyString
+  status: MyString
+  start_date: 2014-09-09
+  current_end_date: 2014-09-09
+  end_date_w_options: 2014-09-09
+  revenue_to_date: 9.99
+  funded_amount: 9.99
+  company: MyString
+  div_pool: 1
+  operating_div: MyString
+  basis: MyString
+  vehicle: MyString
+  contract_type: MyString
+  ecs_role: MyString
+  signed_contract_amount: 9.99
+  account_ex: MyString
+  director: MyString
+  project_manager: MyString
+  cont_admin: MyString
+
+two:
+  account: MyString
+  customer: MyString
+  title: MyString
+  contract_no: MyString
+  status: MyString
+  start_date: 2014-09-09
+  current_end_date: 2014-09-09
+  end_date_w_options: 2014-09-09
+  revenue_to_date: 9.99
+  funded_amount: 9.99
+  company: MyString
+  div_pool: 1
+  operating_div: MyString
+  basis: MyString
+  vehicle: MyString
+  contract_type: MyString
+  ecs_role: MyString
+  signed_contract_amount: 9.99
+  account_ex: MyString
+  director: MyString
+  project_manager: MyString
+  cont_admin: MyString
