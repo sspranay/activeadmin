@@ -1,10 +1,9 @@
 ActiveAdmin.register Contract do
 
-  filter :account
-  filter :customer
-  filter :title
-  filter :status
-
+  filter :account, :as => :string
+  filter :customer, :as => :string
+  filter :title, :label => 'randomtitle', :as => :string
+  
 scope :all, :default => true
   scope :Active do |contracts|
     contracts.where(:status => "A")
@@ -19,7 +18,7 @@ scope :all, :default => true
     column("account", :sortable => :account) {|contract| link_to "#{contract.account} ", admin_contract_path(contract) }
     column :customer
     column :title
-    column :current_end_date
+    column("Current End Date", :sortable => :current_end_date) {|contract| contract.current_end_date.strftime("%d-%b-%Y") }
     column("Funded Amount", :sortable => :funded_amount) {|contract| number_to_currency contract.funded_amount }
     column("Revenue to Date", :sortable => :revenue_to_date) {|contract| number_to_currency contract.revenue_to_date }
     column("Funds Remaining") {|contract| number_to_currency contract.funded_amount - contract.revenue_to_date }

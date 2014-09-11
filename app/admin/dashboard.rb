@@ -14,22 +14,33 @@ ActiveAdmin.register_page "Dashboard" do
     #
      columns do
        column do
-         panel "Recently added Contracts" do
+         panel "Recently updated Contracts" do
            ul do
-             Contract.last(5).map do |contract|
+             Contract.limit(2).order('updated_at desc').map do |contract|
                li link_to(contract.title, admin_contract_path(contract))
              end
            end
          end
        end
 
+    column do
+         panel "At risk Contracts" do
+            table_for Contract.where("date(current_end_date) < ?", Date.today).order('current_end_date desc').map do
+                column ("Contract") {|contract| link_to(contract.title, admin_contract_path(contract))}
+                column ("Current End Date") {|contract| contract.current_end_date.strftime("%d-%b-%Y")}
+            end
+           end
+    end
+
        column do
-         panel "Info" do
-           para "Welcome to ECS Contract Database."
-           para "This is a prototype app done using Rails gem - ActiveAdmin.
-                It uses devise for authentication."
-         end
+         panel "Contracts with end date within 60 days from now" do
+            table_for Contract.where(current_end_date: Date.today..(Date.today + 60.days)).order('current_end_date asc').map do 
+                column ("Contract") {|contract| link_to(contract.title, admin_contract_path(contract))}
+                column ("Current End Date") {|contract| contract.current_end_date.strftime("%d-%b-%Y")}
+            end
+           end
        end
+
      end
   end # content
 end
