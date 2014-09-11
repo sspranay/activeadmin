@@ -2,7 +2,7 @@ ActiveAdmin.register Contract do
 
   filter :account, :as => :string
   filter :customer, :as => :string
-  filter :title, :label => 'randomtitle', :as => :string
+  filter :title, :as => :string
   
 scope :all, :default => true
   scope :Active do |contracts|
